@@ -1,0 +1,47 @@
+
+
+#theme {
+    position: fixed; /* Fixes the position relative to the viewport */
+    bottom: 20px;    /* Adjust this value for vertical positioning */
+    right: 20px;     /* Adjust this value for horizontal positioning */
+    z-index: 1000;   /* Ensures it stays above other content */
+    height: 42px;
+    width: 42px;
+    border-radius: 20px;
+    border: 2px solid var(--accent-color); /* Added 'solid' and adjusted syntax */
+    transform: translateY(-5px);
+    background-color: var(--background-color);
+}
+
+#theme:hover{
+  cursor: pointer;
+}
+
+
+
+
+.moon:hover, .sun:hover {
+    transform: scale(1.1); /* Optional: scales the icons slightly on hover */
+}
+
+
+#theme svg{
+    stroke: var(--text-color);
+    position: fixed; /* Fixes the position relative to the viewport */
+    bottom: -32px;    /* Adjust this value for vertical positioning */
+    right: 8.5px;     /* Adjust this value for horizontal positioning */
+}
+
+.icon {
+    transition: all 0.5s ease; /* Animation duration */
+  }
+  
+  .fade-in {
+    opacity: 1; /* Fully visible */
+    transform: scale(1);
+  }
+  
+  .fade-out {
+    opacity: 0; /* Fully invisible */
+    transform: scale(0.7);
+  }

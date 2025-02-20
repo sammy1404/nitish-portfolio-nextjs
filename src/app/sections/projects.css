@@ -1,0 +1,87 @@
+#projects{
+    padding-top: 80px;
+}
+
+
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between items */
+    width: 100%;
+}
+
+.flex-item {
+    flex: 1 1 25%; /* Grow and shrink, base width of 30% */
+    min-width: 150px; /* Minimum width for each item */
+    padding: 20px;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .flex-item {
+        flex: 1 1 100%; /* Each item will take full width in smaller screens */
+    }
+}
+
+
+
+.projectHeader{
+    text-align: left;
+    font-size: 15px;
+}
+
+.projectBullets{
+    text-align: left;
+    margin-left: 15px;
+}
+
+.projectTitle{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.projectsRow{
+    display: flex;
+    gap: 10px;
+}
+
+.projectsRow a{
+    font-size: 15px;
+    background-color: var(--secondary-color);
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.projectsRow a:hover{
+    background-color: var(--primary-color);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.githubLogo{
+    width: fit-content;
+    height: fit-content;
+}
+
+.githubLogo svg{
+    width: 30px;
+    height: 30px;
+    fill: var(--secondary-color);
+    transition: all 0.4s ease-in-out;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.githubLogo svg:hover{
+    fill: var(--accent-color);
+    transform: scale(1.2) translateY(-2px);
+    stroke-width: 1px;
+    cursor: pointer;
+}

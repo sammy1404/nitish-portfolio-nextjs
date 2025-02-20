@@ -1,0 +1,5 @@
+.mdx-container{
+    padding-top: 20px;
+    background-color: var(--background-color);
+    min-height: 110vh;
+}
