@@ -7,7 +7,7 @@ const Publications = () => {
   return (
     <section id='publications'>
                 <div className="publications">
-            <h2 className="title publicationsHeader">Publications</h2>
+            <h1 className="title publicationsHeader">Publications</h1>
             <div className="flex-container-publications">
     
                 <div className="card-publications">

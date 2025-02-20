@@ -23,6 +23,7 @@
   margin: 0;
   transition: transform 0.3s ease;
   transform: translateX(10px);
+  font-weight: 600;
 }
 
 .blogButton svg{
