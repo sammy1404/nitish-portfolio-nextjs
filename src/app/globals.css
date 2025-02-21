@@ -13,15 +13,16 @@
   --text-color: #e0e8ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #FFE0B5;
-    --secondary-color: #302e2a;
-    --accent-color: #e5ba88;
-    --background-color: #FAF7F0;
-    --text-color: #a97a62;
-  }
+/* @media (prefers-color-scheme: dark) {
+:root {
+  --primary-color: #233535;
+  --secondary-color: #131e15;
+  --accent-color: #347575;
+  --background-color: #000000;
+  --text-color: #e0e8ff;
 }
+
+} */
 
 .light-theme {
   --primary-color: #FFE0B5;
