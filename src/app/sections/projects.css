@@ -9,14 +9,22 @@
     flex-wrap: wrap;
     gap: 10px; /* Space between items */
     width: 100%;
+    padding-inline: 10px;
 }
 
 .flex-item {
     flex: 1 1 25%; /* Grow and shrink, base width of 30% */
     min-width: 150px; /* Minimum width for each item */
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
     background-color: var(--primary-color);
     text-align: center;
+    color: var(--text-color);
+}
+
+.projectHeader h2{
+    font-size: 20px;
+    font-weight: 600;
 }
 
 @media (max-width: 900px) {
@@ -32,9 +40,17 @@
     font-size: 15px;
 }
 
-.projectBullets{
+.projectBullets {
+    list-style-type: disc; /* Add bullet points */
     text-align: left;
-    margin-left: 15px;
+    color: var(--text-color);
+    padding-left: 20px; /* Add padding for better alignment */
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.projectBullets li{
+    margin-bottom: 10px;
 }
 
 .projectTitle{

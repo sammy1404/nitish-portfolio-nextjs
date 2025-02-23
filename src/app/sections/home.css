@@ -23,6 +23,7 @@ section{
     color: var(--text-color);
     font-size: max(5vw,3vh);
     margin-bottom: 5vh;
+    font-weight: 700;
 }
 
 .description{

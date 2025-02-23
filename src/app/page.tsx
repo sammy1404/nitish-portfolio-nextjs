@@ -1,6 +1,6 @@
 'use client'
 import Homepage from './pages/Homepage'
-import "./globals.css"
+import "@/app/globals.css"
 
 export default function Home() {
   return (

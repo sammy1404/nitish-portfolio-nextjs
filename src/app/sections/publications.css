@@ -34,10 +34,11 @@
   }
   
   .card-publications h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: 5px;
     margin-bottom: 10px;
     color: var(--text-color);
+    font-weight: 600;
   }
   
   .card-publications p {

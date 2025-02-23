@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 90px;
 }
 
 #contact svg{
@@ -56,7 +57,7 @@
     stroke: var(--text-color);
     stroke-width: 2; 
     stroke-linecap: round; 
-    stroke-linejoin:round;
+    strokeLinejoin:round;
 }
 
 #mailSVG:hover .mail{

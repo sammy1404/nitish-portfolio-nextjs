@@ -71,6 +71,7 @@
     }
     .bullets{
         font-size: 13px;
+        
     }
 }
 
@@ -120,9 +121,18 @@
 }
 
 .bullets{
-    margin-left: 20px;
+    margin-left: 15px;
     transform: translateY(-15px);
+    
 }
+
+.bullets li{
+    list-style-type: disc; /* Add bullet points */
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+
 @media(max-width:450px){
     .researchTitle{
         transform: translateX(-10px);

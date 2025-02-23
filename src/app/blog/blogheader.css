@@ -1,0 +1,73 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+@media (max-width: 550px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        width: fit-content;
+        padding: 0;
+    }
+    .blogheader{
+        text-align: center;
+        padding: 0;
+        transform: translateX(-10px);
+    }
+    .searchBar {
+        width: 20px;
+    }
+}
+
+.search{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.searchBar {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 200px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    &::placeholder {
+        color: var(--text-color);
+    };
+    
+
+    
+}
+
+.searchBar:hover{
+    background-color: var(--accent-color);
+    width: 350px;
+}
+
+.line{
+    justify-self: center;
+}
+
