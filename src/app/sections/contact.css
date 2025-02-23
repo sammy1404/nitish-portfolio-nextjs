@@ -57,7 +57,7 @@
     stroke: var(--text-color);
     stroke-width: 2; 
     stroke-linecap: round; 
-    strokeLinejoin:round;
+    stroke-linejoin:round;
 }
 
 #mailSVG:hover .mail{
