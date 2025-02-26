@@ -21,7 +21,7 @@ section{
     display: flex;
     text-align: center;
     color: var(--text-color);
-    font-size: max(5vw,3vh);
+    font-size: max(5vw,2.5vh);
     margin-bottom: 5vh;
     font-weight: 700;
 }
@@ -29,8 +29,9 @@ section{
 .description{
     color: var(--accent-color);
     text-align: center;
-    font-size: max(2vw,1.7vh);
+    font-size: max(2vw,1.5vh);
     margin-bottom: 5vh;
+    font-weight: 500;
 }
 
 .cta-button{
