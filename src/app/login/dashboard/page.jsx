@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import LogoutButton from "./LogoutButton";
+import FileUpload from './FileUpload'
 
 export default function Dashboard() {
   const router = useRouter();
@@ -27,14 +27,20 @@ export default function Dashboard() {
     checkAuth();
   }, [router]);
 
-  if (loading) return <p className=" bg-foreground">Loading...</p>;
+  if (loading) return <p className=" bg-background-color">Loading...</p>;
 
   if (!isAuthenticated) return null; // Prevents flashing of protected content
 
   return (
-    <div className="bg-foreground">
-      <h1>Welcome to the Dashboard</h1>
-      <LogoutButton />
+    <div className="flex-col">
+      <div className="flex justify-between w-fulls items-center px-5 pt-5">
+        <h1 className="text-foreground text-3xl">Dashboard</h1>
+        <LogoutButton />
+      </div>
+      <div className="mt-10">
+        <FileUpload />
+      </div>
     </div>
+
   );
 }
