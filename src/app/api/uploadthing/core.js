@@ -7,18 +7,13 @@ const auth = (req) => ({ id: "fakeId" }); // Fake auth function
 
 // FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
-  // Define as many FileRoutes as you like, each with a unique routeSlug
-  imageUploader: f({
-    image: {
-      /**
-       * For full list of options and defaults, see the File Route API reference
-       * @see https://docs.uploadthing.com/file-routes#route-config
-       */
-      maxFileSize: "4MB",
+  // Define an MDX uploader route
+  mdxUploader: f({
+    "text/markdown": {
+      maxFileSize: "16MB",
       maxFileCount: 1,
     },
   })
-    // Set permissions and file types for this FileRoute
     .middleware(async ({ req }) => {
       // This code runs on your server before upload
       const user = await auth(req);
@@ -30,13 +25,12 @@ export const ourFileRouter = {
       return { userId: user.id };
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      // This code RUNS ON YOUR SERVER after upload
+      // This code runs on your server after upload
       console.log("Upload complete for userId:", metadata.userId);
+      console.log("File URL:", file.url);
 
-      console.log("file url", file.url);
-
-      // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
-      return { uploadedBy: metadata.userId };
+      // Return data to client
+      return { uploadedBy: metadata.userId, fileUrl: file.url };
     }),
 };
 

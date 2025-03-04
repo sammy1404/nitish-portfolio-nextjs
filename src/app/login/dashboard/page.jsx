@@ -1,44 +1,40 @@
-"use client"; // Ensures this runs on the client-side
+"use client";
 
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { UploadButton } from "../../utils/uploadthing";
+import LogoutButton from "./LogoutButton";
 
-const LogoutButton = () => {
+export default function Dashboard() {
   const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const handleLogout = async () => {
-    try {
-      await fetch("/api/logout", { method: "POST" }); // Call the logout API
-      document.cookie = "auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;"; // Clear cookie manually
-      router.push("/login"); // Redirect to login page
-    } catch (error) {
-      console.error("Logout failed:", error);
-    }
-  };
+  useEffect(() => {
+    const checkAuth = async () => {
+      const res = await fetch("/api/check-auth");
+      const data = await res.json();
+
+      if (!data.authenticated) {
+        router.push("/login"); // Redirect if not authenticated
+      } else {
+        setIsAuthenticated(true);
+      }
+
+      setLoading(false);
+    };
+
+    checkAuth();
+  }, [router]);
+
+  if (loading) return <p className=" bg-foreground">Loading...</p>;
+
+  if (!isAuthenticated) return null; // Prevents flashing of protected content
 
   return (
-<div>
-  <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <>
-      <UploadButton
-        endpoint="imageUploader"
-        onClientUploadComplete={(res) => {
-          console.log("Files: ", res);
-          alert("Upload Completed");
-        }}
-        onUploadError={(error) => {
-          alert(`ERROR! ${error.message}`);
-        }}
-      />
-    </>
-  </main>
-
-      {/* <Button onClick={handleLogout} className="bg-accent text-white px-4 py-2 rounded cursor-pointer text-foreground rounded-md font-bold">
-        Logout
-      </Button> */}
+    <div className="bg-foreground">
+      <h1>Welcome to the Dashboard</h1>
+      <LogoutButton />
     </div>
   );
-};
-
-export default LogoutButton;
+}
