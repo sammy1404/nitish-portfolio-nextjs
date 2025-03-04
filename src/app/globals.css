@@ -116,6 +116,7 @@
     --accent-color: #347575;
     --background-color: #000000;
     --text-color: #e0e8ff;
+    --blog-card: #255c5c;
   }
 }
 
@@ -137,12 +138,12 @@
   --accent-color: #e5ba88;
   --background-color: #FAF7F0;
   --text-color: #a97a62;
+  --blog-card: #e5ba88;
 }
 
 
 body{
   background-color: var(--background-color);
-  
 }
 
 *{

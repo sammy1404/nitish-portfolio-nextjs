@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { UploadButton } from "@uploadthing/react";
 import supabase from "./SupabaseClient"; // Ensure this points to your Supabase setup
+import { Button } from "@/components/ui/button";
 
 export default function FileUpload() {
   const [formData, setFormData] = useState({
@@ -76,7 +77,7 @@ export default function FileUpload() {
           value={formData.title}
           onChange={handleInputChange}
           required
-          className="border p-2 rounded"
+          className="border-none p-2 py-3 bg-accent rounded-lg placeholder:text-foreground font-semibold text-sm"
         />
         <input
           type="text"
@@ -85,7 +86,7 @@ export default function FileUpload() {
           value={formData.author}
           onChange={handleInputChange}
           required
-          className="border p-2 rounded"
+          className="border-none p-2 py-3 bg-accent rounded-lg placeholder:text-foreground font-semibold text-sm"
         />
         <textarea
           name="summary"
@@ -93,26 +94,26 @@ export default function FileUpload() {
           value={formData.summary}
           onChange={handleInputChange}
           required
-          className="border p-2 rounded"
+          className="border-none p-2 py-3 rounded-lg resize-none h-[30vh] bg-accent placeholder:text-foreground font-semibold text-sm"
         />
 
         {/* Upload MDX File */}
         <UploadButton
-          className="border p-2 rounded bg-accent text-foreground"
+          className="borde-none p-2 rounded-lg bg-accent text-foreground"
           endpoint="mdxUploader"
           onClientUploadComplete={(res) => handleUploadComplete(res, "contentUrl")}
           onUploadError={(error) => alert(`Upload failed: ${error.message}`)}
         />
-        {formData.contentUrl && <p className="text-green-500">MDX uploaded ✅</p>}
+        {formData.contentUrl && <p className="self-center">MDX uploaded!</p>}
 
         {/* Upload Image */}
         <UploadButton
-          className="border p-2 rounded bg-accent text-foreground"
+          className="border-none p-2 rounded-lg bg-accent text-foreground"
           endpoint="imageUploader"
           onClientUploadComplete={(res) => handleUploadComplete(res, "imageUrl")}
           onUploadError={(error) => alert(`Upload failed: ${error.message}`)}
         />
-        {formData.imageUrl && <p className="text-green-500">Image uploaded ✅</p>}
+        {formData.imageUrl && <p className="self-center">Image uploaded!</p>}
 
         <input
           type="text"
@@ -120,12 +121,15 @@ export default function FileUpload() {
           placeholder="Tags (comma-separated)"
           value={formData.tags}
           onChange={handleInputChange}
-          className="border p-2 rounded"
+          className="border-none p-2 py-3 rounded bg-accent rounded-lg placeholder:text-foreground font-semibold text-sm"
         />
 
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+        <Button 
+          type="submit" 
+          className="bg-blue-500 text-white p-2 rounded w-fit self-center rounded-lg font-bold"
+        >
           Add Post →
-        </button>
+        </Button>
       </form>
     </div>
   );

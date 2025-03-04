@@ -1,12 +1,11 @@
 import React from 'react'
 import "./blogheader.css"
-import "../../app/globals.css"
 
 const BlogHeader = () => {
   return (
     <>
     <div className='header'>
-        <h1 className='blogheader'>Smudge's tech blog</h1>
+        <h1 className='blogheader text-foreground poppins text-2xl font-bold'>Smudge's tech blog</h1>
         <div className='search'>
           <input type="text" placeholder="Search..." className='searchBar'/>
         </div>    

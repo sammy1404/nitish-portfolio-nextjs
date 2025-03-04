@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import LogoutButton from "./LogoutButton";
 import FileUpload from './FileUpload'
+import BlogPreview from "./BlogPreview"
+import ThemeButton from "@/app/components/themeButton";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -26,20 +28,22 @@ export default function Dashboard() {
 
     checkAuth();
   }, [router]);
+  
+  if (!isAuthenticated) return null; // Prevents flashing of protected content
 
   if (loading) return <p className=" bg-background-color">Loading...</p>;
 
-  if (!isAuthenticated) return null; // Prevents flashing of protected content
-
   return (
-    <div className="flex-col">
+    <div className="flex-col bg-secondary">
+      <ThemeButton />
       <div className="flex justify-between w-fulls items-center px-5 pt-5">
         <h1 className="text-foreground text-3xl">Dashboard</h1>
         <LogoutButton />
       </div>
-      <div className="mt-10">
+      <div className="mt-5 text-foreground p-5">
         <FileUpload />
       </div>
+        <BlogPreview />
     </div>
 
   );
