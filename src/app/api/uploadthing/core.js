@@ -3,7 +3,7 @@ import { UploadThingError } from "uploadthing/server";
 
 const f = createUploadthing();
 
-const auth = (req) => ({ id: "fakeId" }); // Fake auth function
+const auth = () => ({ id: "fakeId" }); // Fake auth function //req in brackets??
 
 export const ourFileRouter = {
   // MDX File Uploader

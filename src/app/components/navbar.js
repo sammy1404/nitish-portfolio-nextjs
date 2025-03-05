@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div id="navigation">
       <nav id="desktopNav">
-      <h1 className="logo"><a href="#">Smudge's Hub</a></h1>
+      <h1 className="logo"><a href="#">Smudge&apos;s Hub</a></h1>
         <ul id="desktopMenu">
           <li><a href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
@@ -21,7 +21,7 @@ function NavBar() {
       
       <div id="mobileNav">
         <div id="menu">
-        <h1 className="logo"><a href="#">Smudge's Hub</a></h1>
+        <h1 className="logo"><a href="#">Smudge&apos;s Hub</a></h1>
           
         </div>
       </div>

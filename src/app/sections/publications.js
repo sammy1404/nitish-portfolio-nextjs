@@ -6,11 +6,12 @@ import "./publications.css"
 const Publications = () => {
   return (
     <section id='publications'>
-                <div className="publications">
+        <div className="publications">
             <h1 className="title publicationsHeader">Publications</h1>
             <div className="flex-container-publications">
     
                 <div className="card-publications">
+                    {/* eslint-disable @next/next/no-img-element */}
                     <img src="assets/Hessian-Free.png" alt=""></img>
                     <h3>Detecting Side Effects of Adverse Drug Reactions Through Drug-Drug Interactions</h3>
                     <p>
@@ -32,6 +33,7 @@ const Publications = () => {
                     </div>
                 </div>
                 <div className="card-publications">
+                    {/* eslint-disable @next/next/no-img-element */}
                     <img src="assets/NLP.png" alt=""></img>
                     <h3>Autoencoder based approach for the mitigation of spurious correlations</h3>
                     <p>
@@ -55,6 +57,7 @@ const Publications = () => {
                     </div>
                 </div>
                 <div className="card-publications">
+                    {/* eslint-disable @next/next/no-img-element */}
                     <img src="assets/Blockchain.png" alt=""></img>
                     <h3>Color and Brush Stroke Pattern Recognition in Abstract Art using DCGANs</h3>
                     <p>

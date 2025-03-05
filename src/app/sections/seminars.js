@@ -38,7 +38,7 @@ const seminars = () => {
                 <p className='seminarDetails'><strong>Date: </strong>June 2023</p>
                 <p className='seminarDetails'><strong>Organisation: </strong>Google Developers Student Club</p>
                 <p className='seminarDetails'>
-                    Gave a presentation on recent advancements on Googles's recent advancements on Generative AI such as Palm API, 
+                    Gave a presentation on recent advancements on Googles&apos;s recent advancements on Generative AI such as Palm API, 
                     MediaPipe and representation of words and sentences as embeddings.
                 </p>
                 <div className='seminarLinks'>
