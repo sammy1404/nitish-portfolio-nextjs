@@ -8,11 +8,10 @@ import ThemeButton from '../components/themeButton'
 
 const Page = () => {
   return (
-    <>
+    <div className='flex flex-col'>
     <ThemeButton />
-    <BlogHeader />
     <BlogContent />
-    </>
+    </div>
   )
 }
 
