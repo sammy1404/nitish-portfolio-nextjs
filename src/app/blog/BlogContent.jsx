@@ -44,6 +44,7 @@ const BlogContent = () => {
 
       <Link href={`/post/${featuredPost.id}`}>
       <div className="featured-post">
+        {/* eslint-disable @next/next/no-img-element */}
         <img src={featuredPost.image} alt={featuredPost.title} className="featured-image"/>
         <div className="featured-content">
           <h3 className=" text-3xl font-bold">{featuredPost.title}</h3>
@@ -60,11 +61,11 @@ const BlogContent = () => {
 
       <h2 className="Latest text-foreground font-semibold">OTHER READS</h2>
 
-      {/* Scrollable Posts Section */}
       <div className="posts-grid">
         {remainingPosts.map((post) => (
           <div key={post.id} className="post-card">
             <Link href={`/post/${post.id}`} className="post-card">
+            {/* eslint-disable @next/next/no-img-element */}
             <img src={post.image} alt={post.title} />
             <div className="post-content">
               <h4>{post.title}</h4>
