@@ -116,7 +116,10 @@
     --accent-color: #347575;
     --background-color: #000000;
     --text-color: #e0e8ff;
-    --blog-card: #255c5c;
+    --blog-card: #244646;
+    --blog-header: rgb(199, 205, 204);
+    --tag-color: rgb(27, 99, 80);
+    --summary-color: rgb(221, 242, 236);
   }
 }
 
@@ -139,6 +142,9 @@
   --background-color: #FAF7F0;
   --text-color: #a97a62;
   --blog-card: #e5ba88;
+  --blog-header: rgb(58, 51, 43);
+  --tag-color: #4f210a;
+  --summary-color: rgb(74, 36, 5);
 }
 
 

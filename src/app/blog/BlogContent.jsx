@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import supabase from "../login/dashboard/SupabaseClient";
 import "./blogContent.css";
 import "../../app/globals.css";
+import Link from "next/link";
 
 const BlogContent = () => {
   const [posts, setPosts] = useState([]);
@@ -19,6 +20,7 @@ const BlogContent = () => {
         console.error("Error fetching posts:", error);
       } else {
         setPosts(data);
+        
       }
     };
 
@@ -40,14 +42,15 @@ const BlogContent = () => {
     <div className="blog-container">
       <h2 className="Latest text-foreground font-semibold">FEATURED</h2>
 
-      {/* Featured Post Section */}
+      {/* Featured Post Section */
+      console.log(posts)}
       <div className="featured-post">
-        <img src={featuredPost.image} alt={featuredPost.title} />
+        <img src={featuredPost.image} alt={featuredPost.title} className="featured-image"/>
         <div className="featured-content">
-          <h3 className=" text-3xl font-bold text-secondary">{featuredPost.title}</h3>
+          <h3 className=" text-3xl font-bold">{featuredPost.title}</h3>
           <p className="date">{new Date(featuredPost.created_at).toLocaleDateString()}</p>
-          <p className="summary text-foreground">{featuredPost.summary}</p>
-          <div className="tags text-foreground">
+          <p className="summary">{featuredPost.summary}</p>
+          <div className="tags">
             {processTags(featuredPost.tags).map((tag, index) => (
               <span key={index} className="tag">{tag}</span>
             ))}
@@ -61,6 +64,7 @@ const BlogContent = () => {
       <div className="posts-grid">
         {remainingPosts.map((post) => (
           <div key={post.id} className="post-card">
+            <Link href={`/post/${post.id}`} className="post-card">
             <img src={post.image} alt={post.title} />
             <div className="post-content">
               <h4>{post.title}</h4>
@@ -68,10 +72,11 @@ const BlogContent = () => {
               <p className="summary">{post.summary}</p>
               <div className="tags">
               {processTags(post.tags).map((tag, index) => (
-              <span key={index} className="tag text-foreground">{tag}</span>
+              <span key={index} className="tag">{tag}</span>
             ))}
               </div>
             </div>
+            </Link>
           </div>
         ))}
       </div>

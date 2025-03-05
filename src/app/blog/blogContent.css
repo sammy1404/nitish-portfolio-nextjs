@@ -16,16 +16,21 @@
   display: flex;
   gap: 30px;
   margin-bottom: 40px;
-  padding: 20px;
   background-color: var(--blog-card);
   border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-.featured-post img {
+.featured-post:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.featured-image{
   width: 50%;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 
@@ -33,6 +38,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.featured-content h3{
+  color: var(--blog-header);
 }
 
 @media screen and (max-width: 768px) {
@@ -75,6 +84,11 @@
   object-fit: cover;
 }
 
+.post-card h4 {
+  color: var(--blog-header);
+  font-weight: 600;
+}
+
 .post-content {
   padding: 15px;
 }
@@ -88,6 +102,7 @@
 .summary {
   margin: 10px 0;
   line-height: 1.5;
+  color: var(--summary-color);
 }
 
 .tags {
@@ -98,10 +113,11 @@
 }
 
 .tag {
-  background-color: var(--secondary-color);
+  background-color: var(--tag-color);
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8em;
+  color: var(--text-color);
 }
 
 /* Add some hover effects */
@@ -109,4 +125,5 @@
   transform: translateY(-2px);
   transition: transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
