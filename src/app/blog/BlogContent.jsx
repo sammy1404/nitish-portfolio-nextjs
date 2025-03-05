@@ -42,8 +42,7 @@ const BlogContent = () => {
     <div className="blog-container">
       <h2 className="Latest text-foreground font-semibold">FEATURED</h2>
 
-      {/* Featured Post Section */
-      console.log(posts)}
+      <Link href={`/post/${featuredPost.id}`}>
       <div className="featured-post">
         <img src={featuredPost.image} alt={featuredPost.title} className="featured-image"/>
         <div className="featured-content">
@@ -57,6 +56,7 @@ const BlogContent = () => {
           </div>
         </div>
       </div>
+      </Link>
 
       <h2 className="Latest text-foreground font-semibold">OTHER READS</h2>
 

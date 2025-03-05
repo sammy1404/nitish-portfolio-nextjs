@@ -166,3 +166,8 @@ h1{
     margin-right: 10px;
   }
 }
+
+
+.bg-red {
+  background-color: #f56565; /* Hashcode for bg-red-500 */
+}
