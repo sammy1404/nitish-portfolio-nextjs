@@ -40,9 +40,6 @@ h1 {
     .searchBar {
         width: 20px;
     }
-    .Latest{
-        margin-top: 100px;
-    }
     .headerBar{
         display: flex;
         flex-direction: column;

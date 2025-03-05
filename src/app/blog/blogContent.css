@@ -1,5 +1,6 @@
 .Latest{
     font-size: 30px;
+    margin-bottom: 15px;
 }
 
 .blog-container {
@@ -8,9 +9,6 @@
   margin: 0 auto;
 }
 
-.Latest {
-  margin-bottom: 15px;
-}
 
 .featured-post {
   display: flex;
